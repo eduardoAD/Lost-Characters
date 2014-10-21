@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -62,11 +63,82 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lost Characters" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Lost Characters" id="tQt-TN-PWz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a4J-WQ-2Kj">
+                            <connections>
+                                <segue destination="MT2-Uj-coS" kind="show" identifier="showSave" id="lHP-f0-fW1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605" y="64"/>
+        </scene>
+        <!--New Character-->
+        <scene sceneID="Lyv-kL-qPE">
+            <objects>
+                <viewController id="MT2-Uj-coS" customClass="SaveViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yOF-GZ-hHL"/>
+                        <viewControllerLayoutGuide type="bottom" id="AF6-GB-auQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hl9-os-nMW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Actor's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPY-BQ-iWQ">
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passenger" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="312-Jq-1MD">
+                                <rect key="frame" x="16" y="110" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Required" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ok-Wi-Obp">
+                                <rect key="frame" x="16" y="148" width="568" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.54704483699999995" green="0.082067103710000006" blue="0.04888702558" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lPY-BQ-iWQ" firstAttribute="trailing" secondItem="Hl9-os-nMW" secondAttribute="trailingMargin" id="C3M-BM-yQo"/>
+                            <constraint firstItem="312-Jq-1MD" firstAttribute="leading" secondItem="Hl9-os-nMW" secondAttribute="leadingMargin" id="Jmo-r3-5de"/>
+                            <constraint firstItem="312-Jq-1MD" firstAttribute="trailing" secondItem="Hl9-os-nMW" secondAttribute="trailingMargin" id="N80-FN-HyG"/>
+                            <constraint firstItem="3Ok-Wi-Obp" firstAttribute="leading" secondItem="Hl9-os-nMW" secondAttribute="leadingMargin" id="Qc2-Ec-lio"/>
+                            <constraint firstItem="lPY-BQ-iWQ" firstAttribute="leading" secondItem="Hl9-os-nMW" secondAttribute="leadingMargin" id="QpS-lm-lRQ"/>
+                            <constraint firstItem="312-Jq-1MD" firstAttribute="top" secondItem="lPY-BQ-iWQ" secondAttribute="bottom" constant="8" id="Ya9-Lk-SXU"/>
+                            <constraint firstItem="3Ok-Wi-Obp" firstAttribute="trailing" secondItem="Hl9-os-nMW" secondAttribute="trailingMargin" id="cyv-3T-u8Q"/>
+                            <constraint firstItem="3Ok-Wi-Obp" firstAttribute="top" secondItem="312-Jq-1MD" secondAttribute="bottom" constant="8" id="tTI-6n-GJf"/>
+                            <constraint firstItem="lPY-BQ-iWQ" firstAttribute="top" secondItem="yOF-GZ-hHL" secondAttribute="bottom" constant="8" id="y8B-hF-2Xi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Character" id="RDZ-Xq-Zdg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Jy8-Z2-7vk">
+                            <connections>
+                                <segue destination="UC0-mC-Fb2" kind="unwind" identifier="saveCharacter" unwindAction="unwindSegue:" id="Bgi-Qb-nnJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wik-Jo-0zg">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="MT2-Uj-coS" id="2rQ-Iu-Vyd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actorText" destination="lPY-BQ-iWQ" id="Qfn-1t-vgR"/>
+                        <outlet property="passengerText" destination="312-Jq-1MD" id="TLK-e8-U4Z"/>
+                        <outlet property="requiredLabel" destination="3Ok-Wi-Obp" id="03V-u2-bqq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="diQ-x4-BOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UC0-mC-Fb2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1343" y="-664"/>
         </scene>
         <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">

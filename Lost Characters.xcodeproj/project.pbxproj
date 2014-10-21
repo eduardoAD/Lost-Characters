@@ -17,6 +17,7 @@
 		E4B7C07719F6F563002852CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B7C07519F6F563002852CD /* LaunchScreen.xib */; };
 		E4B7C08319F6F563002852CD /* Lost_CharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C08219F6F563002852CD /* Lost_CharactersTests.m */; };
 		E4B7C08D19F6F6FA002852CD /* lost.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B7C08C19F6F6FA002852CD /* lost.plist */; };
+		E4B7C09019F70FA1002852CD /* SaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C08F19F70FA1002852CD /* SaveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		E4B7C08119F6F563002852CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B7C08219F6F563002852CD /* Lost_CharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lost_CharactersTests.m; sourceTree = "<group>"; };
 		E4B7C08C19F6F6FA002852CD /* lost.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = lost.plist; path = ../../../../Downloads/lost.plist; sourceTree = "<group>"; };
+		E4B7C08E19F70FA1002852CD /* SaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveViewController.h; sourceTree = "<group>"; };
+		E4B7C08F19F70FA1002852CD /* SaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				E4B7C06D19F6F563002852CD /* DetailViewController.h */,
 				E4B7C06E19F6F563002852CD /* DetailViewController.m */,
 				E4B7C07019F6F563002852CD /* Main.storyboard */,
+				E4B7C08E19F70FA1002852CD /* SaveViewController.h */,
+				E4B7C08F19F70FA1002852CD /* SaveViewController.m */,
 				E4B7C07319F6F563002852CD /* Images.xcassets */,
 				E4B7C07519F6F563002852CD /* LaunchScreen.xib */,
 				E4B7C06719F6F563002852CD /* Lost_Characters.xcdatamodeld */,
@@ -236,6 +241,7 @@
 				E4B7C06619F6F563002852CD /* AppDelegate.m in Sources */,
 				E4B7C06919F6F563002852CD /* Lost_Characters.xcdatamodeld in Sources */,
 				E4B7C06319F6F563002852CD /* main.m in Sources */,
+				E4B7C09019F70FA1002852CD /* SaveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

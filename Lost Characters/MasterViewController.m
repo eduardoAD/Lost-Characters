@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "SaveViewController.h"
 
 @interface MasterViewController ()
 
@@ -57,6 +58,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSLog(@"Detail ...");
+    }else if ([[segue identifier] isEqualToString:@"showSave"]) {
+        NSLog(@"Add new character ...");
+    }
+}
+
+-(IBAction)unwindSegue:(UIStoryboardSegue *)segue{
+    if ([segue.sourceViewController isKindOfClass:[SaveViewController class]]) {
+        SaveViewController *saveVC = segue.sourceViewController;
+        if (saveVC.actor && saveVC.passenger) {
+            [self saveCharacterWithActor:saveVC.actor passenger:saveVC.passenger];
+            [self loadData];
+        }
     }
 }
 
