@@ -29,7 +29,9 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"LostCharacter"];
     NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"actor" ascending:YES];
     NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"passenger" ascending:NO];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"gender like[c] %@", @"male"];
 
+    request.predicate = predicate;
     request.sortDescriptors = [NSArray arrayWithObjects:sortDescriptor1, sortDescriptor2 ,nil];
     self.characters = [self.managedObjectContext executeFetchRequest:request error:nil];
 
