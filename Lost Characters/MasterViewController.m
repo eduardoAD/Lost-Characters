@@ -7,8 +7,8 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
 #import "SaveViewController.h"
+#import "LostCharacterCell.h"
 
 @interface MasterViewController ()
 
@@ -37,7 +37,13 @@
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"lost" ofType:@"plist"];
         NSArray *lostPlist = [NSArray arrayWithContentsOfFile:plistPath];
         for (NSDictionary *data in lostPlist) {
-            [self saveCharacterWithActor:[data objectForKey:@"actor"] passenger:[data objectForKey:@"passenger"]];
+            [self saveCharacterWithActor:[data objectForKey:@"actor"]
+                               passenger:[data objectForKey:@"passenger"]
+                              occupation:[data objectForKey:@"occupation"]
+                                     age:[data objectForKey:@"age"]
+                                  gender:[data objectForKey:@"gender"]
+                               hairColor:[data objectForKey:@"hairColor"]
+                            characterBio:[data objectForKey:@"characterBio"]];
         }
         [self loadData];
     }
@@ -45,10 +51,21 @@
     [self.tableView reloadData];
 }
 
--(void)saveCharacterWithActor:(NSString *)actor passenger:(NSString *)passenger{
+-(void)saveCharacterWithActor:(NSString *)actor
+                    passenger:(NSString *)passenger
+                   occupation:(NSString *)occupation
+                          age:(NSString *)age
+                       gender:(NSString *)gender
+                    hairColor:(NSString *)hairColor
+                 characterBio:(NSString *)characterBio{
     NSManagedObject *character = [NSEntityDescription insertNewObjectForEntityForName:@"LostCharacter" inManagedObjectContext:self.managedObjectContext];
     [character setValue:actor forKey:@"actor"];
     [character setValue:passenger forKey:@"passenger"];
+    [character setValue:occupation forKey:@"occupation"];
+    [character setValue:age forKey:@"age"];
+    [character setValue:gender forKey:@"gender"];
+    [character setValue:hairColor forKey:@"hairColor"];
+    [character setValue:characterBio forKey:@"characterBio"];
 
     [self.managedObjectContext save:nil];
 }
@@ -56,9 +73,7 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSLog(@"Detail ...");
-    }else if ([[segue identifier] isEqualToString:@"showSave"]) {
+    if ([[segue identifier] isEqualToString:@"showSave"]) {
         NSLog(@"Add new character ...");
     }
 }
@@ -67,7 +82,13 @@
     if ([segue.sourceViewController isKindOfClass:[SaveViewController class]]) {
         SaveViewController *saveVC = segue.sourceViewController;
         if (saveVC.actor && saveVC.passenger) {
-            [self saveCharacterWithActor:saveVC.actor passenger:saveVC.passenger];
+            [self saveCharacterWithActor:saveVC.actor
+                               passenger:saveVC.passenger
+                              occupation:saveVC.occupation
+                                     age:saveVC.age
+                                  gender:saveVC.gender
+                               hairColor:saveVC.hairColor
+                            characterBio:saveVC.characterBio];
             [self loadData];
         }
     }
@@ -80,14 +101,26 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *character = [self.characters objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    cell.textLabel.text = [character valueForKey:@"actor"];
-    cell.detailTextLabel.text = [character valueForKey:@"passenger"];
+    [tableView registerNib:[UINib nibWithNibName:@"LostCharacterCell" bundle:nil] forCellReuseIdentifier:@"myCell"];
+    LostCharacterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
 
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(LostCharacterCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSManagedObject *character = [self.characters objectAtIndex:indexPath.row];
+
+    cell.actorLabel.text = [character valueForKey:@"actor"];
+    cell.passengerLabel.text = [character valueForKey:@"passenger"];
+    cell.occupationLabel.text = [character valueForKey:@"occupation"];
+    cell.ageLabel.text = [character valueForKey:@"age"];
+    cell.genderLabel.text = [character valueForKey:@"gender"];
+    cell.hairColorLabel.text = [character valueForKey:@"hairColor"];
+    cell.bioLabel.text = [character valueForKey:@"characterBio"];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 148;
+}
 
 @end

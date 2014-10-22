@@ -8,10 +8,15 @@
     </entity>
     <entity name="LostCharacter" syncable="YES">
         <attribute name="actor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="characterBio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hairColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="passenger" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="LostCharacter" positionX="270" positionY="207" width="128" height="75"/>
+        <element name="LostCharacter" positionX="270" positionY="207" width="128" height="150"/>
     </elements>
 </model>

@@ -12,5 +12,10 @@
 
 @property (strong, nonatomic) NSString *actor;
 @property (strong, nonatomic) NSString *passenger;
+@property (strong, nonatomic) NSString *occupation;
+@property (strong, nonatomic) NSString *age;
+@property (strong, nonatomic) NSString *gender;
+@property (strong, nonatomic) NSString *hairColor;
+@property (strong, nonatomic) NSString *characterBio;
 
 @end
