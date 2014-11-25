@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E430B8351A25350C00AEC817 /* lost.plist in Resources */ = {isa = PBXBuildFile; fileRef = E430B8341A25350C00AEC817 /* lost.plist */; };
 		E4B7C06319F6F563002852CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C06219F6F563002852CD /* main.m */; };
 		E4B7C06619F6F563002852CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C06519F6F563002852CD /* AppDelegate.m */; };
 		E4B7C06919F6F563002852CD /* Lost_Characters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C06719F6F563002852CD /* Lost_Characters.xcdatamodeld */; };
@@ -15,7 +16,6 @@
 		E4B7C07419F6F563002852CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B7C07319F6F563002852CD /* Images.xcassets */; };
 		E4B7C07719F6F563002852CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B7C07519F6F563002852CD /* LaunchScreen.xib */; };
 		E4B7C08319F6F563002852CD /* Lost_CharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C08219F6F563002852CD /* Lost_CharactersTests.m */; };
-		E4B7C08D19F6F6FA002852CD /* lost.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B7C08C19F6F6FA002852CD /* lost.plist */; };
 		E4B7C09019F70FA1002852CD /* SaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C08F19F70FA1002852CD /* SaveViewController.m */; };
 		E4B7C09219F732C0002852CD /* LostCharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B7C09119F732C0002852CD /* LostCharacterCell.xib */; };
 		E4B7C09519F774BF002852CD /* LostCharacterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B7C09419F774BF002852CD /* LostCharacterCell.m */; };
@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E430B8341A25350C00AEC817 /* lost.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lost.plist; sourceTree = "<group>"; };
 		E4B7C05D19F6F563002852CD /* Lost Characters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lost Characters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B7C06119F6F563002852CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B7C06219F6F563002852CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		E4B7C07C19F6F563002852CD /* Lost CharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lost CharactersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B7C08119F6F563002852CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B7C08219F6F563002852CD /* Lost_CharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lost_CharactersTests.m; sourceTree = "<group>"; };
-		E4B7C08C19F6F6FA002852CD /* lost.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = lost.plist; path = ../../../../Downloads/lost.plist; sourceTree = "<group>"; };
 		E4B7C08E19F70FA1002852CD /* SaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveViewController.h; sourceTree = "<group>"; };
 		E4B7C08F19F70FA1002852CD /* SaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveViewController.m; sourceTree = "<group>"; };
 		E4B7C09119F732C0002852CD /* LostCharacterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LostCharacterCell.xib; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		E4B7C06019F6F563002852CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E4B7C08C19F6F6FA002852CD /* lost.plist */,
 				E4B7C06119F6F563002852CD /* Info.plist */,
+				E430B8341A25350C00AEC817 /* lost.plist */,
 				E4B7C06219F6F563002852CD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -220,7 +220,7 @@
 			files = (
 				E4B7C07219F6F563002852CD /* Main.storyboard in Resources */,
 				E4B7C07719F6F563002852CD /* LaunchScreen.xib in Resources */,
-				E4B7C08D19F6F6FA002852CD /* lost.plist in Resources */,
+				E430B8351A25350C00AEC817 /* lost.plist in Resources */,
 				E4B7C07419F6F563002852CD /* Images.xcassets in Resources */,
 				E4B7C09219F732C0002852CD /* LostCharacterCell.xib in Resources */,
 			);
@@ -436,6 +436,7 @@
 				E4B7C08819F6F563002852CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4B7C08919F6F563002852CD /* Build configuration list for PBXNativeTarget "Lost CharactersTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +445,7 @@
 				E4B7C08B19F6F563002852CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

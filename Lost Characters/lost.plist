@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>actor</key>
+		<string>Matthew Fox</string>
+		<key>passenger</key>
+		<string>Jack Shephard</string>
+		<key>occupation</key>
+		<string>American actor</string>
+		<key>age</key>
+		<string>age 48</string>
+		<key>gender</key>
+		<string>Male</string>
+		<key>hairColor</key>
+		<string>Brown hair</string>
+		<key>characterBio</key>
+		<string>He became the reclutant leader who solves disputes with reason but no afraid to use guns or torture if necessary.</string>
+	</dict>
+	<dict>
+		<key>actor</key>
+		<string>Evangeline Lilly</string>
+		<key>passenger</key>
+		<string>Kate Austen</string>
+		<key>occupation</key>
+		<string>Canadian actress and author</string>
+		<key>age</key>
+		<string>age 35</string>
+		<key>gender</key>
+		<string>Female</string>
+		<key>hairColor</key>
+		<string>Curly hair</string>
+		<key>characterBio</key>
+		<string>Fugitive from justice for several years. She bravely led the first exploration into the jungle.</string>
+	</dict>
+	<dict>
+		<key>actor</key>
+		<string>Jorge Garcia</string>
+		<key>passenger</key>
+		<string>Hugo “Hurley” Reyes</string>
+		<key>occupation</key>
+		<string>American actor and comedian</string>
+		<key>age</key>
+		<string>age 41</string>
+		<key>gender</key>
+		<string>Male</string>
+		<key>hairColor</key>
+		<string>Black hair</string>
+		<key>characterBio</key>
+		<string>Won $156 million lottery. His laid-back humor keeps the survivor&apos;s spirits up, yet he secretly believes his bad luck caused the crash.</string>
+	</dict>
+</array>
+</plist>
